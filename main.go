@@ -54,7 +54,7 @@ func readFile(file *multipart.FileHeader) ([]byte, error) {
 	return binaryFile, nil
 }
 
-func upload(c *gin.Context) {
+func Upload(c *gin.Context) {
 	// Using `ShouldBind`
 	var form Form
 	_ = c.ShouldBind(&form)
