@@ -1,4 +1,4 @@
-package uploader
+package main
 
 import (
 	"bytes"
@@ -265,18 +265,18 @@ func validateUploadFiles(files []*multipart.FileHeader) (bool, string) {
 			return false, "File too large"
 		}
 
-		if contentType != "image/jpeg" || contentType != "image/png" {
+		if contentType != "image/jpeg" && contentType != "image/png" {
 			return false, "Filetype is not supported"
 		}
 	}
 	return true, "ok"
 }
 
-// func main() {
-// 	srv := gin.Default()
-// 	srv.POST("/upload", upload)
+func main() {
+	srv := gin.Default()
+	srv.POST("/upload", Upload)
 
-// 	if err := srv.Run(":" + "8080"); err != nil {
-// 		panic("Error")
-// 	}
-// }
+	if err := srv.Run(":" + "8080"); err != nil {
+		panic("Error")
+	}
+}
