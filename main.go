@@ -272,11 +272,11 @@ func validateUploadFiles(files []*multipart.FileHeader) (bool, string) {
 	return true, "ok"
 }
 
-func main() {
-	srv := gin.Default()
-	srv.POST("/upload", Upload)
-
-	if err := srv.Run(":" + "8080"); err != nil {
-		panic("Error")
-	}
-}
+//func main() {
+//	srv := gin.Default()
+//	srv.POST("/upload", Upload)
+//
+//	if err := srv.Run(":" + "8080"); err != nil {
+//		panic("Error")
+//	}
+//}
